@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>aspnet-EmployeeRDLCReport.WebUI-A5E57CE9-08EC-4A44-A83D-54A37690300C</UserSecretsId>
+    <CopyRefAssembliesToPublishDirectory>false</CopyRefAssembliesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Reporting" Version="2.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8" />
+    <PackageReference Include="System.CodeDom" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Report Dataset\dsEmployee.Designer.cs">
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\Reports\rptEmployee.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Report Dataset\dsEmployee.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>

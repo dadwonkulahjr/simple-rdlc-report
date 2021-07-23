@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Update="Report Dataset\dsEmployee.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Report Dataset\dsEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
